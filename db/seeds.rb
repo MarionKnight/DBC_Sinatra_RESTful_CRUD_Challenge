@@ -1,0 +1,1 @@
+User.create({ first_name: "marion", last_name: "knight", email: "knight@gmail.com", password_hash: "supersecret" });

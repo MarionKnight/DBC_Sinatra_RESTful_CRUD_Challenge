@@ -1,4 +1,5 @@
 source :rubygems
+ruby "1.9.3"
 
 # PostgreSQL driver
 gem 'pg'
@@ -16,8 +17,11 @@ gem 'activerecord'
 gem 'rake'
 
 gem 'shotgun'
+gem 'debugger'
 
-group :test do
+group :development do
   gem 'faker'
   gem 'rspec'
+  gem 'capybara'
+  gem 'shoulda-matchers'
 end
