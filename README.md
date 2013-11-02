@@ -1,4 +1,4 @@
-Note to self: database name is 1._Sinatra-_RESTful_CRUD_development
+Note to self: database name is DBC_Sinatra_RESTful_CRUD_Challenge_development
 
 Overview
 Using Sinatra, create a simple notes application with a single notes table in the database and all CRUD routes and views. You can start from the standard SInatra Skeleton .
