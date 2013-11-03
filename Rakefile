@@ -123,7 +123,16 @@ task "console" do
   exec "irb -r./config/environment"
 end
 
-desc "Run the specs"
-RSpec::Core::RakeTask.new(:spec)
+desc "Run the specs, but use development database"
+task "spec" do
+  ENV['RACK_ENV'] = 'development'
+  RSpec::Core::RakeTask.new(:spec)
+end
+
+desc "Run the specs, use test database"
+task "spec_test" do
+  ENV['RACK_ENV'] = 'test'
+  RSpec::Core::RakeTask.new(:spec_test)
+end
 
 task :default  => :specs
