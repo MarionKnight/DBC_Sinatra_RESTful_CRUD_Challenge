@@ -23,5 +23,8 @@ group :development do
   gem 'faker'
   gem 'rspec'
   gem 'capybara'
+end
+
+group :test do
   gem 'shoulda-matchers'
 end

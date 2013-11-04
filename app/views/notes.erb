@@ -1,0 +1,7 @@
+<h2>Welcome to your notes main page User ID <%= @user_id %></h2><hr>
+<h2>These are your notes:</h2>
+<% @notes.each do |note| %>
+<p><a href='/notes/<%= note.id %>'><%= note.created_at %></a></p>
+<% end %>
+<hr>
+
