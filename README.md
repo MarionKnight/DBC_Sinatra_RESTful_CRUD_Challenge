@@ -1,5 +1,8 @@
 Note to self: database name is DBC_Sinatra_RESTful_CRUD_Challenge_development
 
+an_object.method(:update).source_location
+=> will show the path to where the method is defined from
+
 # User Story: create and maintain notes
 # Views:
 # CRUD # | Path             | Verb | Purpose            | Next Route
