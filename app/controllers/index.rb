@@ -1,3 +1,18 @@
+# require 'sinatra'
+# # require 'sinatra/activerecord'
+# require_relative '../models/user'
+# require_relative '../models/note'
+
+# begin
+#   require 'dotenv'
+#   Dotenv.load
+#   rescue LoadError
+# end
+
+# set :database, ENV['DATABASE_URL']
+
+# enable :sessions
+
 get '/' do
   # Look in app/views/index.erb
   erb :index
@@ -32,28 +47,34 @@ get '/notes' do
 end
 
 get '/notes/new' do
-
+  erb :note_create
+  p params
 end
 
-post '/notes/new' do
+post '/notes' do
   p params
+  redirect '/notes'
 end
 
 get '/notes/:id' do
   @this_note = Note.find(params[:id])
-  erb :show_note
+  erb :note_detail
 end
 
 get '/notes/:id/edit' do
-  redirect '/notes/:id/update'
+  erb :note_detail
 end
 
-patch '/notes/:id/update' do
-  redirect '/notes/:id'
+patch '/notes/:id' do
+  note = Note.find(params[:id])
+  p note.methods
+  note.update(content: params[:content])
+  redirect "/notes/#{note.id}"
+# Important!! You need double quotes to do string interpolation!!
 end
 
-delete '/notes/:id/delete' do
-  @this_note = Note.find(params[:id])
-  @this_note.destroy
+delete '/notes/:id' do
+  this_note = Note.find(params[:id])
+  this_note.delete
   redirect '/notes'
 end

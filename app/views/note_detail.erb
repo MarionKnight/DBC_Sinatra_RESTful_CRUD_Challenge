@@ -1,11 +1,15 @@
 <h2>This is Note #<%= @this_note.id %><h2>
+
 <p><%= @this_note.content %></p><hr>
-<form action="/notes/<%= @this_note.id %>/edit" method="post">
+
+<form action="/notes/<%= @this_note.id %>" method="post">
+  <p>
+  <input type="text" name="content" value="<%= @this_note.content %>"></p>
   <input type="hidden" name="_method" value="patch" />
-  <p>Content: <input type="text" name="content" value="<%= @this_note.content%>" ></p>
   <input type="submit" value="Update Me">
 </form><hr>
-<form action="/notes/<%= @this_note.id %>/delete" method="post">
+
+<form action="/notes/<%= @this_note.id %>" method="post">
   <input type="hidden" name="_method" value="delete" />
   <input type="submit" value="Delete Me" />
 </form>
