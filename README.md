@@ -1,19 +1,22 @@
 Note to self: database name is DBC_Sinatra_RESTful_CRUD_Challenge_development
 
-# User Story: create and maintain notes
-# Views:
-# CRUD # | Path             | Verb | Purpose            | Next Route
-# (0)      /                         [log in user]        (1) if login or (0.1) otherwise
-# (0.1)    /signup                   [created user]       (1) if login || (0.1)
-# (1)      /notes                    [display notes]       /notes
-# (1)      /notes                    [create user]         /notes
-# (1)      /notes                    [display notes]      (2)create or(4)detail
-# (2)      /notes/new                [create note]        /logout
-# (3)      /notes                    [created new note] => same as (1)
-# (4)      /notes/:id                [show a note] => (1)
-# (5)      /notes/:id/edit     GET   [form for 6] => (1)
-# (6)      /notes/:id          PATCH [update a note] => (4)
-# (7)      /notes/:id          DEL   [delete a note] => (4)
+an_object.method(:update).source_location
+=> will show the path to where the method is defined from
+
+User Story: create and maintain notes
+Views:
+CRUD # | Path             | Verb | Purpose            | Next Route
+(0)      /                         [log in user]        (1) if login or (0.1) otherwise
+(0.1)    /signup                   [created user]       (1) if login || (0.1)
+(1)      /notes                    [display notes]       /notes
+(1)      /notes                    [create user]         /notes
+(1)      /notes                    [display notes]      (2)create or(4)detail
+(2)      /notes/new                [create note]        /logout
+(3)      /notes                    [created new note] => same as (1)
+(4)      /notes/:id                [show a note] => (1)
+(5)      /notes/:id/edit     GET   [form for 6] => (1)
+(6)      /notes/:id          PATCH [update a note] => (4)
+(7)      /notes/:id          DEL   [delete a note] => (4)
 
 Differences:
 edit, goes to show

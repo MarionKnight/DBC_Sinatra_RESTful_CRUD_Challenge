@@ -13,6 +13,8 @@
 
 # enable :sessions
 
+require 'debugger'
+
 get '/' do
   # Look in app/views/index.erb
   erb :index
@@ -67,8 +69,11 @@ end
 
 patch '/notes/:id' do
   note = Note.find(params[:id])
-  p note.methods
-  note.update(content: params[:content])
+# This was the activerecord version issue where update
+# is only allowed in recent versions, otherwise it throws
+# NoMethodError: private method `update' called for #<Note:0x00..>
+# For this version of AR 3.2.12 have to use update_attributes
+  note.update_attributes(content: params[:content])
   redirect "/notes/#{note.id}"
 # Important!! You need double quotes to do string interpolation!!
 end
